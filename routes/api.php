@@ -17,3 +17,26 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+//color routes
+Route::apiResource('/colors','ColorController');
+
+
+//storage routes
+Route::apiResource('/storage','StorageController');
+
+
+//phone list routes according to color filter
+Route::group(['prefix'=>'colors'],function(){
+
+	Route::apiResource('/{color}/phones','PhoneController');
+});
+
+
+//phone list routes according to storage filter
+Route::group(['prefix'=>'storage'],function(){
+
+	Route::apiResource('/{storage}/phones','PhoneController');
+});
+

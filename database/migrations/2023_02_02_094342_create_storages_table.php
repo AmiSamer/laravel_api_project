@@ -14,7 +14,8 @@ class CreateStoragesTable extends Migration
     public function up()
     {
         Schema::create('storages', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->text('storage_capacity');
             $table->timestamps();
         });
     }

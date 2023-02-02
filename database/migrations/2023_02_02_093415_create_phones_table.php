@@ -14,7 +14,13 @@ class CreatePhonesTable extends Migration
     public function up()
     {
         Schema::create('phones', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->text('model_name');
+            $table->text('description');
+            $table->integer('price');
+            $table->text('brand');
+            $table->integer('color_id');
+            $table->integer('storage_id');
             $table->timestamps();
         });
     }

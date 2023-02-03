@@ -27,16 +27,20 @@ Route::apiResource('/colors','ColorController');
 Route::apiResource('/storage','StorageController');
 
 
-//phone list routes according to color filter
-Route::group(['prefix'=>'colors'],function(){
-
-	Route::apiResource('/{color}/phones','PhoneController');
-});
+//phone routes
+Route::apiResource('/phones','PhoneController');
 
 
-//phone list routes according to storage filter
-Route::group(['prefix'=>'storage'],function(){
+// //phone list routes according to color filter
+// Route::group(['prefix'=>'colors'],function(){
 
-	Route::apiResource('/{storage}/phones','PhoneController');
-});
+// 	Route::apiResource('/{color}/phones','PhoneController');
+// });
+
+
+// //phone list routes according to storage filter
+// Route::group(['prefix'=>'storage'],function(){
+
+// 	Route::apiResource('/{storage}/phones','PhoneController');
+// });
 

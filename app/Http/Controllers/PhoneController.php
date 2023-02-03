@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Model\Phone;
 use Illuminate\Http\Request;
+use App\Http\Resources\Phone\PhoneCollection;
+use App\Http\Resources\Phone\PhoneResource;
+use App\Model\Color;
+use DB;
 
 class PhoneController extends Controller
 {
@@ -14,7 +18,7 @@ class PhoneController extends Controller
      */
     public function index()
     {
-        //
+       return PhoneCollection::collection(Phone::all());
     }
 
   
@@ -37,7 +41,9 @@ class PhoneController extends Controller
      */
     public function show(Phone $phone)
     {
-        //
+
+
+        return new PhoneResource($phone);
     }
 
    

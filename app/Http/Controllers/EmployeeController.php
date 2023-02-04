@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use Illuminate\Http\Request;
+use App\Http\Resources\Employee\EmployeeResource;
+use Auth;
 
 class EmployeeController extends Controller
 {
@@ -14,7 +16,21 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+       
+         if(Auth::id() != 1){
+
+            echo "no permission for unauthorized access";
+           
+        }else{
+
+        $emp = Employee::select('id','employee_name','salary')->get();  
+        return [
+
+            'data' => $emp
+
+        ];
+
+        }
     }
 
     /**

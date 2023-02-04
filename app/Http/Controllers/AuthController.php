@@ -23,17 +23,24 @@ class AuthController extends Controller
     }
 
     private function respondWithToken($token) {
-        return $this->respond([
-            'token' => $token,
-            'access_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
-        ], "Login Successful");
+        // return $this->respond([
+        //     'token' => $token,
+        //     'access_type' => 'bearer',
+        //     'expires_in' => auth()->factory()->getTTL() * 60
+        // ], "Login Successful");
+
+        return response()->json([
+        'access_token' => $token,
+        'token_type' => 'bearer',
+        //'expires_in' => auth()->factory()->getTTL() * 60
+        'expires_in' => auth('api')->factory()->getTTL() * 60
+    ]);
     }
 
 
     public function logout() {
         auth()->logout();
-        return $this->respondWithMessage('User successfully logged out');
+        return response()->json(['message' => 'user is logged out successfully']);
     }
 
 
@@ -41,7 +48,12 @@ class AuthController extends Controller
         return $this->respondWithToken(auth()->refresh());
     }
 
-    public function me() {
-        return $this->respond(auth()->user());
+    // public function me() {
+    //     return $this->respond(auth()->user());
+    // }
+
+    public function profile(){
+
+        return response()->json(auth()->user());
     }
 }

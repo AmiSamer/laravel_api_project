@@ -24,7 +24,8 @@ Route::middleware(['api'])->group(function ($router) {
     Route::post('/login', 'AuthController@login');
     Route::post('/logout', 'AuthController@logout');
     Route::post('/refresh', 'AuthController@refresh');
-    Route::get('/me', 'AuthController@me')->middleware('log.route');
+    // Route::get('/me', 'AuthController@me')->middleware('log.route');
+    Route::post('/profile', 'AuthController@profile');
 });
 
 
@@ -42,4 +43,8 @@ Route::apiResource('/storage','StorageController');
 
 //phone routes
 Route::apiResource('/phones','PhoneController');
+
+
+//employee routes
+Route::apiResource('/employees','EmployeeController');
 

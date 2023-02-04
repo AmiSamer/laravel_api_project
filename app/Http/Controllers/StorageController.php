@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Storage;
 use Illuminate\Http\Request;
+use App\Http\Resources\Storage\StorageResource;
 
 class StorageController extends Controller
 {
@@ -46,7 +47,7 @@ class StorageController extends Controller
      */
     public function show(Storage $storage)
     {
-        //
+        return new StorageResource($storage);
     }
 
     /**

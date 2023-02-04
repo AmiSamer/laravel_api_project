@@ -30,17 +30,3 @@ Route::apiResource('/storage','StorageController');
 //phone routes
 Route::apiResource('/phones','PhoneController');
 
-
-// //phone list routes according to color filter
-// Route::group(['prefix'=>'colors'],function(){
-
-// 	Route::apiResource('/{color}/phones','PhoneController');
-// });
-
-
-// //phone list routes according to storage filter
-// Route::group(['prefix'=>'storage'],function(){
-
-// 	Route::apiResource('/{storage}/phones','PhoneController');
-// });
-

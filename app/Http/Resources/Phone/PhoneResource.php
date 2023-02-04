@@ -28,14 +28,6 @@ class PhoneResource extends JsonResource
         $storage_capacity = $storage['storage_capacity'];
 
 
-
-        // $phone_id = $this->id;
-        // $desc = Phone::select('description')->where('id',$phone_id)->first();
-        // $description = nl2br($desc['description']);
-
-
-
-
          return [
 
             'id' => $this->id,

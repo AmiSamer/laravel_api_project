@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Color;
+use App\Employee;
 use Illuminate\Http\Request;
-use App\Http\Resources\Color\ColorResource;
 
-class ColorController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,23 +41,21 @@ class ColorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Color  $color
+     * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(Color $color)
+    public function show(Employee $employee)
     {
-        return new ColorResource($color);
-
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Color  $color
+     * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Color $color)
+    public function edit(Employee $employee)
     {
         //
     }
@@ -67,10 +64,10 @@ class ColorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Color  $color
+     * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Color $color)
+    public function update(Request $request, Employee $employee)
     {
         //
     }
@@ -78,10 +75,10 @@ class ColorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Color  $color
+     * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Color $color)
+    public function destroy(Employee $employee)
     {
         //
     }
